@@ -1,14 +1,30 @@
+# UofT SCS Data Analytics Boot Camp
+#  Unit-12-Web-Scraping-Challenge
+#  Author:	Vivianti Santosa -->
+
+# MARS MISSION SCRAPING FUNCTION  
+
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
+import pandas as pd
 import time
 import re
-import pandas as pd
-
 
 def init_browser():
     executable_path = {'executable_path': 'driver/chromedriver.exe'}
-    #browser = Browser('chrome', **executable_path, headless=False)
     return Browser("chrome", **executable_path, headless=False)
+
+def scrape_info():
+    # Collect and store data in a dictionary
+    costa_data = {
+        "mars_news" : scrape_news(),
+        "f_image_dict" : scrape_f_image(),
+        "weather_tweet" : scrape_tweet(),
+        "hem_img_dict" : scrape_images(),
+        "mars_table" : scrape_table(),}
+    # Return results
+    return costa_data
+
 
 def scrape_news():
     ### NASA Mars Program News
@@ -20,16 +36,15 @@ def scrape_news():
     # get latest news articles
     news_title = soup.find_all('div', class_='content_title')[1].text
     news_article = soup.find('div', class_='article_teaser_body').text
-    # Close the browser after scraping
-    browser.quit()
+
     # Store data in a dictionary
     news_dict = {
         "news_title": news_title,
-        "news_article": news_article,
-    }
+        "news_article": news_article,}    
+    # Close the browser after scraping
+    browser.quit()  
     # Return results
     return news_dict
-
 
 def scrape_f_image():
     ### JPL Mars Space Images - Featured Image
@@ -46,8 +61,9 @@ def scrape_f_image():
     # set up parser
     soup = bs(browser.html, 'lxml')
     # get url of the featured image_
-    f_image_url = soup.select_one('figure.lede a img').get("src")
-    f_title = soup.select_one('figure.lede a img').get("title")
+    featured_image = soup.select_one('figure.lede a img').get("src")
+    f_image_url = f'https://www.jpl.nasa.gov{featured_image}'
+    f_title = soup.select_one('figure.lede a img').get("title")   
     # Store data in a dictionary
     f_image_dict = {
         "f_image_url": f_image_url,
@@ -89,8 +105,8 @@ def scrape_images():
         link.click()                 
         # scrape
         soup = bs(browser.html, 'lxml')   # set up parser 
-        image_ulr = soup.find('img', class_="wide-image")['src']   # get image's ulr
-        title = soup.find('h2').text                               # get title
+        image_ulr = browser.find_link_by_text('Sample').first['href']    # get image's ulr
+        title = soup.find('h2').text                                     # get title
         # put in dictionary
         image_dict = {"Image_ULR": image_ulr,   
                     "Title":title}            
@@ -111,4 +127,4 @@ def scrape_table():
     df.columns = ['Features','Values']
     df=df.set_index('Features')
     # return results
-    return df
+    return df.to_html(classes="table table-striped")
