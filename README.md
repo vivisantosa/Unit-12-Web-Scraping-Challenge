@@ -1,10 +1,11 @@
 # Unit-12-Web-Scraping-Challenge - Mission to Mars
 Web Scraping, Flask, and MongoBD 
+<img src="https://cdn.mos.cms.futurecdn.net/pCubQdszKKbYMnAjpSx6LP-650-80.jpg.webp" width="1080">
 'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA17832_hires.jpg'
 https://cdn.mos.cms.futurecdn.net/pCubQdszKKbYMnAjpSx6LP-650-80.jpg.webp
 
 ## Part 1 : Web Scraping
-<img align="right" src="Screenshot (152)">
+<img align="right" src="Images/Screenshot (152)">
 The first part of the assignment is to scrape mars information from various NASA website. The information that we gather are in texts, urls of pictures, urls of webpages, and tables formats. The initial scraping is performed in Jupyter Notebook using BeautifulSoup, Pandas, and Requests/Splinter. Additionally we use request, re, time libraries.
 
 
