@@ -4,11 +4,9 @@
 'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA17832_hires.jpg'
 
 ## Part 1 : Web Scraping
-The first part of the assignment is to scrape mars information from various NASA website. The information that we gather are in texts, urls of pictures, urls of webpages, and tables formats. The libraries that we use are BeautifulSoup, Pandas, and Requests/Splinter, as well as request, re, time.
+The first part of the assignment is to scrape mars information from various NASA website. The information that we gather are in texts, urls of pictures, urls of webpages, and tables formats. The libraries that we use are BeautifulSoup, Pandas, and Requests/Splinter, as well as request, re, time. To make it easier, the initial scraping is performed in Jupyter Notebook.
 
-To make it easier, the initial scraping is performed in Jupyter Notebook using 
-
-The sites that we use are :
+The sites that we scraped are :
 * Mars News : 
   * https://mars.nasa.gov/news/
   * From this site, we grab news title and new headline 
