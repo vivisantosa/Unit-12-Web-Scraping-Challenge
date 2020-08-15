@@ -133,6 +133,7 @@ def scrape_table():
     # pick the right table and modify
     df= tables[0]
     df.columns = ['Features','Values']
-    df=df.set_index('Features')
+    # df=df.set_index('Features')
     # return results
-    return df.to_html(classes="table table-striped")
+    
+    return df.to_html(index=False, classes="table table-striped")
