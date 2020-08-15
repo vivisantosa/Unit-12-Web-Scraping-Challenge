@@ -16,14 +16,14 @@ def init_browser():
 
 def scrape_info():
     # Collect and store data in a dictionary
-    costa_data = {
+    mars_data = {
         "mars_news" : scrape_news(),
         "f_image_dict" : scrape_f_image(),
         "weather_tweet" : scrape_tweet(),
         "hem_img_dict" : scrape_images(),
         "mars_table" : scrape_table(),}
     # Return results
-    return costa_data
+    return mars_data
 
 
 def scrape_news():
@@ -94,6 +94,10 @@ def scrape_images():
     browser = init_browser()
     browser.visit('https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars')
     
+    # get the extra information about Mars Hemisphere
+    soup = bs(browser.html, 'html.parser')
+    extra_info=soup.find_all('div', class_="item")
+
     # find and visit each of the 4 sites and pick up the pictures' url and put them in dictionary
     #Create dictionary for mars hemisphere images
     Hem_Img_Dict = []
@@ -101,15 +105,19 @@ def scrape_images():
     for i in range(0,4):
         # navigate to the specific page
         link = browser.find_by_css("a.product-item h3")[i]
-        print(link.text)
         link.click()                 
         # scrape
         soup = bs(browser.html, 'lxml')   # set up parser 
         image_ulr = browser.find_link_by_text('Sample').first['href']    # get image's ulr
         title = soup.find('h2').text                                     # get title
+        info= extra_info[i].find('p').text
+        print(info)                                   # get the info paragraph
+        site_url = 'https://astrogeology.usgs.gov' + extra_info[i].find("a")["href"] # get the site url
         # put in dictionary
-        image_dict = {"Image_ULR": image_ulr,   
-                    "Title":title}            
+        image_dict = {  "Image_ULR": image_ulr,   
+                        "Title":title,
+                        "Info" :info,
+                        "site" :site_url,}            
         Hem_Img_Dict.append(image_dict)       # append dict to list
         # navigate to previous page      
         browser.back()      

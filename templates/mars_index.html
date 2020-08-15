@@ -16,14 +16,16 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <style>
     p{
-    font-size: 16px;  
-    }
+    font-size: 16px; 
+    text-align: justify; }
+    h3{
+      padding-bottom: 0px;}
     .box1{
     /*border: solid black; 
     background-color: rgb(43, 226, 83);*/
     padding-left: 30px;
     padding-right: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     margin: 0px;}
     .f_image{
     width:100%;
@@ -35,7 +37,7 @@
   <div class="container-fluid">
     <div class="jumbotron text-center" style="margin-bottom: 0px; padding: 24px;">
       <h1>MISSION TO MARS</h1>
-      <p><a class="btn btn-primary btn-lg" style="padding-left: auto; padding-right: auto;"   href="/scrape" role="button">Get Data!</a></p>
+      <p2><a class="btn btn-primary btn-lg" style="padding-left: auto; padding-right: auto;"   href="/scrape" role="button">Get Data!</a></p2>
     </div> 
   </div><!--end of container-fluid-->
 
@@ -44,7 +46,7 @@
       <div class="col-sm-12" > 
         <div class="box1">
           <h2>LATEST MARS NEWS</h2>
-          <h3><br>{{ m_data.mars_news.news_title }}</h4>
+          <h3>{{ m_data.mars_news.news_title }}</h3>
           <p>{{ m_data.mars_news.news_article }}</p>
         </div> 
       </div> 
@@ -54,16 +56,16 @@
         <div class="box1" style="padding-right: 0px;">
           <h2>FEATURE MARS IMAGE</h2>
           <p>  {{ m_data.f_image_dict.f_title }} </p>
-          <a hrft="Featured Space Image"><img src="{{ m_data.f_image_dict.f_image_url }}" class="f_image" alt="Featured Space Image"></a>
+          <img src="{{ m_data.f_image_dict.f_image_url }}" class="f_image" alt="Featured Space Image">
         </div>
       </div> <!--end of LEFT column-->
       <div class="col-sm-4"> <!--this is RIGHT column --> 
-        <div class="box1" style="padding-left: 0px;">
+        <div class="box1" style="padding-left: 2%;">
           <h2>MARS WEATHER</h2>
-          <h3>Current weather on Mars</h4>
+          <h3>Current weather on Mars</h3>
           <p>{{ m_data.weather_tweet }}</p>
         </div>
-        <div class="box1" style="padding-left: 0px;">
+        <div class="box1" style="padding-left: 2%;">
           <h2>MARS FACTS</h2>
           {{ m_data.mars_table | safe}}
         </div> <br>
@@ -82,8 +84,8 @@
                 <img class="card-img-top" src="{{ image.Image_ULR }}" alt="Card image" style="width:100%">
                 <div class="card-body">
                   <h4 class="card-title">{{ image.Title }}</h4>
-                  <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary stretched-link">More Info</a>
+                  <p1 class="card-text">{{ image.Info }}</p1><br>
+                  <a href="{{ image.site }}" class="btn btn-primary stretched-link">More Info</a>
                 </div>
               </div>  
             </div>
