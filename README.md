@@ -5,7 +5,8 @@ Web Scraping, Flask, and MongoBD
 https://cdn.mos.cms.futurecdn.net/pCubQdszKKbYMnAjpSx6LP-650-80.jpg.webp
 
 ## Part 1 : Web Scraping
-<img align="right" src="Images/Screenshot (152)">
+<img src="/Images/Laboratory.jpg" width="1080">
+<img align="right" src="/Images/Screenshot (152).png">
 The first part of the assignment is to scrape mars information from various NASA website. The information that we gather are in texts, urls of pictures, urls of webpages, and tables formats. The initial scraping is performed in Jupyter Notebook using BeautifulSoup, Pandas, and Requests/Splinter. Additionally we use request, re, time libraries.
 
 
