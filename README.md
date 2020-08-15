@@ -23,7 +23,7 @@ The sites that we scraped are :
 * Mars Hemispheres
   * https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars
   * This is a site about Mars hemisphere, where images, and information about each of them is pulled. 
-<img align="right" src="/Images/Screenshot (152).png" width="680">
+<img align="right" src="/Images/Screenshot (152).png" width="540">
 Once routes to all of the scraped  information is determined, the codes are transformed into a python script in a file called scrape_mars.py. 
 I decided to create small function definitions that will execute all of your scraping code for each of the websites.  Another function definition called scrape_info calls the other functions, gathers the data, and bundles it into one Python dictionary containing all of the scraped data (called mars_data).
 
