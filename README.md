@@ -1,8 +1,8 @@
 # Unit-12-Web-Scraping-Challenge - Mission to Mars
 ### Web Scraping, Flask, and MongoBD 
-<img src="https://cdn.mos.cms.futurecdn.net/pCubQdszKKbYMnAjpSx6LP-650-80.jpg.webp" width="1080">
-<br>
-##### 'https://vivisantosa.github.io/Unit-12-Web-Scraping-Challenge/templates/mars_index.html'
+<img src="https://cdn.mos.cms.futurecdn.net/pCubQdszKKbYMnAjpSx6LP-650-80.jpg.webp" width="1080"><br>
+
+#### 'https://vivisantosa.github.io/Unit-12-Web-Scraping-Challenge/index.html'
 <br> (un-dynamic webpage - sample)
 
 ## Part 1 : Web Scraping
@@ -25,7 +25,7 @@ The sites that we scraped are :
 * Mars Hemispheres
   * https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars
   * This is a site about Mars hemisphere, where images, and information about each of them is pulled. 
-<img align="right" src="/Images/Screenshot (152).png" width="540">
+<img align="right" src="/Images/Screenshot (161).png" width="540">
 Once routes to all of the scraped  information is determined, the codes are transformed into a python script in a file called scrape_mars.py. 
 I decided to create small function definitions that will execute all of your scraping code for each of the websites.  Another function definition called scrape_info calls the other functions, gathers the data, and bundles it into one Python dictionary containing all of the scraped data (called mars_data).
 
