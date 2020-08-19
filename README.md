@@ -25,7 +25,7 @@ The sites that we scraped are :
 * Mars Hemispheres
   * https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars
   * This is a site about Mars hemisphere, where images, and information about each of them is pulled. 
-<img align="right" src="/Images/Screenshot (161).png" width="540">
+<img align="right" src="/Images/Screenshot (161).png" width="480">
 Once routes to all of the scraped  information is determined, the codes are transformed into a python script in a file called scrape_mars.py. 
 I decided to create small function definitions that will execute all of your scraping code for each of the websites.  Another function definition called scrape_info calls the other functions, gathers the data, and bundles it into one Python dictionary containing all of the scraped data (called mars_data).
 
@@ -37,7 +37,7 @@ Two flask apps are created to operate the two routes are set up to handle the in
 * Root route “/” that will query your Mongo database and pass the mars data into an HTML template to display the data.
 * Scrape root - “/scrape” that will import your scrape_mars.py script and call your scrape function.
 
-Last but not least the information, the images, and the tables, are displayed in an interactive HTML page. The file “index.html” takes the mars_data dictionary and displays all of the data in the appropriate HTML elements. On the right is the screenhoot of the webpage. Below is the sample (un-dynamic) of the webpage.
+Last but not least the information, the images, and the tables, are displayed in an interactive HTML page. The file “index.html” takes the mars_data dictionary and displays all of the data in the appropriate HTML elements. On the right is the screenhoot of the webpage. Below is the sample (un-dynamic) of the webpage.<br>
 https://vivisantosa.github.io/Unit-12-Web-Scraping-Challenge/templates/mars_index.html
 
 
