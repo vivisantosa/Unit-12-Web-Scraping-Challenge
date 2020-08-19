@@ -1,7 +1,9 @@
 # Unit-12-Web-Scraping-Challenge - Mission to Mars
 ### Web Scraping, Flask, and MongoBD 
 <img src="https://cdn.mos.cms.futurecdn.net/pCubQdszKKbYMnAjpSx6LP-650-80.jpg.webp" width="1080">
-'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA17832_hires.jpg'
+<br>
+##### 'https://vivisantosa.github.io/Unit-12-Web-Scraping-Challenge/templates/mars_index.html'
+<br> (un-dynamic webpage - sample)
 
 ## Part 1 : Web Scraping
 The first part of the assignment is to scrape mars information from various NASA website. The information that we gather are in texts, urls of pictures, urls of webpages, and tables formats. The libraries that we use are BeautifulSoup, Pandas, and Requests/Splinter, as well as request, re, time. To make it easier, the initial scraping is performed in Jupyter Notebook.
@@ -35,6 +37,7 @@ Two flask apps are created to operate the two routes are set up to handle the in
 * Root route “/” that will query your Mongo database and pass the mars data into an HTML template to display the data.
 * Scrape root - “/scrape” that will import your scrape_mars.py script and call your scrape function.
 
-Last but not least the information, the images, and the tables, are displayed in an interactive HTML page. The file “index.html” takes the mars_data dictionary and displays all of the data in the appropriate HTML elements. Next is the screenhoot of the webpage. 
+Last but not least the information, the images, and the tables, are displayed in an interactive HTML page. The file “index.html” takes the mars_data dictionary and displays all of the data in the appropriate HTML elements. On the right is the screenhoot of the webpage. Below is the sample (un-dynamic) of the webpage.
+https://vivisantosa.github.io/Unit-12-Web-Scraping-Challenge/templates/mars_index.html
 
 
