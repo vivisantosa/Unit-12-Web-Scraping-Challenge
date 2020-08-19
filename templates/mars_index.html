@@ -29,13 +29,43 @@
     margin: 0px;}
     .f_image{
     width:100%;
-    border: ridge 10px;}  
+    border: ridge 10px;} 
+
+    /*style for nav */
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding-left: 15px;
+      padding-right: 15px;
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 20;}
+    li {
+      float: left;}
+    li a {
+      display: block;
+      color: #9d9d9d;
+      color-adjust: whitesmoke;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 16px;}
   </style>
 </head>
 
-<body style= "background-color: red">
+<body >
+  <!--Navbar with collapse and drop down -->
+  <ul>
+    <li><a href="https://github.com/vivisantosa/Unit-12-Web-Scraping-Challenge">WEB SCRAPING PROJECT</a></li>
+    <li style="float:right"><a href="https://vivisantosa.github.io/"><span class="glyphicon glyphicon-user"></span> MyPage</a></li>
+  </ul>
+
+  <!--content-->
   <div class="container-fluid">
-    <div class="jumbotron text-center" style="margin-bottom: 0px; padding: 24px;">
+    <div class="jumbotron text-center" style="margin-top: 70px; margin-bottom: 0px; padding: 24px;">
       <h1>MISSION TO MARS</h1>
       <p2><a class="btn btn-primary btn-lg" style="padding-left: auto; padding-right: auto;"   href="/scrape" role="button">Get Data!</a></p2>
     </div> 
