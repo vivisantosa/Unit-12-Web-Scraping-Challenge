@@ -2,6 +2,8 @@
 ### Web Scraping, Flask, and MongoBD 
 <img src="https://cdn.mos.cms.futurecdn.net/pCubQdszKKbYMnAjpSx6LP-650-80.jpg.webp" width="1080"><br>
 
+Author: Vivianti Santosa
+Date: 2020-08-16
 #### 'https://vivisantosa.github.io/Unit-12-Web-Scraping-Challenge/index.html'
 <br> (un-dynamic webpage - sample)
 
